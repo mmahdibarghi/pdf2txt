@@ -1,4 +1,4 @@
-#install tesseract : this is a open sourse OCR project By Google
+#install tesseract and add it to the path: this is a open sourse OCR project By Google
 #install persian language for tesseract
 
 
