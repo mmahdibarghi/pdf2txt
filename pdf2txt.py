@@ -32,3 +32,7 @@ for i in range(inputpdf.numPages):
     with open(name, "wb") as outputStream:
         output.write(outputStream)
 ##############################################
+    # make image
+    images = convert_from_path(name)
+    images[0].save('page' + str(i) + '.jpg', 'JPEG')
+    
