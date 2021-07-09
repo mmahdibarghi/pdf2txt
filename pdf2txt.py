@@ -28,17 +28,17 @@ for i in range(inputpdf.numPages):
     #make pdf
     output = PdfFileWriter()
     output.addPage(inputpdf.getPage(i))
-    name = "document-page%s.pdf" % i
+    name = "./pdfs/document-page%s.pdf" % i
     with open(name, "wb") as outputStream:
         output.write(outputStream)
 ##############################################
     # make image
     images = convert_from_path(name)
-    images[0].save('page' + str(i) + '.jpg', 'JPEG')
+    images[0].save('./images/'+'page' + str(i) + '.jpg', 'JPEG')
 
     ######################################
     ## OCR :: image to text
-    img = Image.open('page' + str(i) + '.jpg')
+    img = Image.open('./images/'+'page' + str(i) + '.jpg')
     # path where the tesseract module is installed
     pytesseract.pytesseract.tesseract_cmd = 'C:/Program Files/Tesseract-OCR/tesseract.exe'
     # converts the image to result and saves it into result variable
